@@ -1,0 +1,555 @@
+/* font start */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+/* font end */
+
+/* css reset start */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* css reset end */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* background */
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-image: url('../image/bg.jpg');
+}
+
+/* header start */
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.navbar {
+    width: 90%;
+    height: 120px;
+    margin: auto;
+    background-color: #434242;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: all .3s ease-in;
+}
+
+.nav-blur {
+    background-color: #434242bb;
+    backdrop-filter: blur(3px);
+}
+
+h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+    color: #f3efe0;
+    text-transform: uppercase;
+}
+
+
+nav ul {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    color: #F3EFE0;
+    letter-spacing: 1px;
+    transition: .3s ease-in;
+}
+
+li:hover a {
+    text-shadow: 0 0 10px white;
+}
+
+/* button start */
+
+.button {
+    display: none;
+}
+
+.button span {
+    display: block;
+}
+
+.hamburgerLine {
+    width: 27px;
+    height: 2px;
+    background-color: white;
+    transition: all .3s ease-in;
+}
+
+.first {
+    transform-origin: top left;
+}
+
+.last {
+    transform-origin: bottom left;
+}
+
+
+.hamburgerActive > span:first-child {
+    transform: rotate(45deg);
+}
+
+.hamburgerActive > span:nth-child(2){
+    transform: scale(0);
+}
+
+.hamburgerActive > span:last-child{
+    transform: rotate(-45deg);
+}
+
+.active {
+    display: flex;
+}
+
+/* animasi isi button */
+.ulAnimasi {
+    transform: translateY(0);
+}
+
+/* button end */
+
+/* header end */
+
+/* main start */
+
+#content {
+    width: 90%;
+    background-color: white;
+    margin: auto;
+}
+
+#makanan {
+    padding-top: 168px;
+    padding-bottom: 100px;
+    border-bottom: 2px solid #434242;
+}
+
+#minuman, #cemilan {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    border-bottom: 2px solid #434242;
+}
+
+#cemilan {
+    border: none;
+}
+
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+/* card */
+#makanan .flex, #minuman .flex, #cemilan .flex {
+    display: flex;
+    justify-content: space-around;
+}
+.indomie, .nasgor, .pecel_lele, .nasi_padang,
+.kopi, .soft_drink, .susu, .jamu,
+.chitato, .tictac, .basreng, .bakwan {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #777;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease-in;
+    /* margin-bottom: 50px; */
+}
+
+.indomie img, .nasgor img, .pecel_lele img, .nasi_padang img,
+.kopi img, .soft_drink img, .susu img, .jamu img,
+.chitato img, .tictac img, .basreng img, .bakwan img {
+    width: 200px;
+    background-size: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all .3s ease-in;
+}
+
+.indomie h3, .nasgor h3, .pecel_lele h3, .nasi_padang h3,
+.kopi h3, .soft_drink h3, .susu h3, .jamu h3,
+.chitato h3, .tictac h3, .basreng h3, .bakwan h3 {
+    color: #F3EFE0;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all .3s ease-in;
+}
+
+/* hover card */
+.indomie:hover, .nasgor:hover, .pecel_lele:hover, .nasi_padang:hover,
+.kopi:hover, .soft_drink:hover, .susu:hover, .jamu:hover,
+.chitato:hover, .tictac:hover, .basreng:hover, .bakwan:hover {
+    background-color: #888;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .7);
+}
+
+.indomie:hover img, .nasgor:hover img, .pecel_lele:hover img, .nasi_padang:hover img,
+.kopi:hover img, .soft_drink:hover img, .susu:hover img, .jamu:hover img,
+.chitato:hover img, .tictac:hover img, .basreng:hover img, .bakwan:hover img {
+    transform: translateY(-8px);
+    box-shadow: 0 7px 5px rgba(0, 0, 0, .7);
+}
+
+/* main end */
+
+/* aside start */
+
+aside {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    padding: 60px 0;
+}
+
+aside h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.card-profile {
+    width: fit-content;
+    background-color: #777;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all .3s ease-in;
+}
+
+.card-profile img {
+    width: 350px;
+    margin-bottom: 10px;
+    filter: grayscale(10);
+    transition: all .3s ease-in;
+}
+
+.card-profile p {
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 40px;
+    color: white;
+}
+
+/* hover */
+.card-profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+}
+
+.card-profile:hover img {
+    filter: grayscale(0);
+}
+
+/* aside end */
+
+/* footer start */
+footer {
+    width: 90%;
+    margin: auto;
+    padding: 14px 0;
+    background-color: #434242;
+}
+.ig {
+    width: 30px;
+    margin: auto;
+}
+
+.ig a {
+    color: black;
+    transition: all .3s ease-in;
+}
+
+.ig a:hover {
+    color: white;
+}
+
+.svg-ig{
+    fill: currentColor;
+}
+
+.p-foot {
+    margin-top: 5px;
+    color: #f3efe0;
+    text-align: center;
+}
+
+.html-foot {
+    color: orange;
+}
+.css {
+    color: skyblue;
+}
+.js {
+    color: yellow;
+}
+/* responsive */
+/* tablet */
+@media screen and (max-width: 768px) {
+    /* heading start */
+    h1 {
+        font-size: 40px;
+    }
+
+    .navbar {
+        width: 85%;
+        margin: auto;
+    }
+
+    nav ul {
+        width: 40%;
+    }
+
+    li a {
+        font-size: 15px;
+    }
+
+    .button {
+        display: none;
+    }
+    /* heading end */
+
+    /* main start */
+    #content {
+        width: 85%;
+    }
+    h2 {
+        font-size: 27px;
+        margin-bottom: 60px;
+    }
+
+    #makanan .flex, #minuman .flex, #cemilan .flex {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 50px 0;
+    }
+
+    #makanan h3, #minuman h3 {
+        font-size: 18px;
+    }
+
+    /* main end */
+
+    /* aside start */
+
+    aside {
+        width: 85%;
+    }
+
+    .card-profile img {
+        width: 200px;
+    }
+
+    .card-profile p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    /* hover */
+    .card-profile:hover {
+        transform: scale(1.05);
+    }
+
+    /* aside end */
+
+    /* footer start */
+    footer {
+        width: 85%;
+    }
+
+    .ig {
+        width: 28px;
+    }
+
+    .p-foot{
+        font-size: small;
+    }
+    
+}
+
+/* mobile */
+@media screen and (max-width: 576px) {
+    /* heading start */
+    h1 {
+        font-size: 18px;
+        letter-spacing: 1px;
+        margin-left: 5px;
+    }
+    
+    .navbar {
+        width: 100%;
+        height: 50px;
+        border-radius: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .nav-blur {
+        background-color: #434242;
+        backdrop-filter: none;
+    }
+    
+    nav ul {
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(3px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 45px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        transform: translateY(-619px);
+        transition: all .3s ease-in-out;
+        z-index: 1;
+    }
+
+    li{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in;
+    }
+    
+    li:hover {
+        background-color: rgba(255,255,255, .5);
+        backdrop-filter: blur(10px);
+    }
+
+    li a {
+        font-size: 20px;
+        transition: all .3s ease-in;
+    }
+
+    li:hover a {
+        color: black;
+    }
+
+    .button {
+        height: 20px;
+        margin-right: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 99;
+    }
+    /* heading end */
+
+    /* main start */
+    #content {
+        width: 100%;
+    }
+    h2 {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    #makanan, #minuman {
+        padding-top: 70px;
+    }
+    #makanan h3, #minuman h3 {
+        font-size: 18px;
+    }
+
+    /* main end */
+
+    /* aside start */
+
+    aside {
+        width: 100%;
+    }
+
+    .card-profile img {
+        width: 170px;
+    }
+
+    .card-profile p {
+        font-size: 13px;
+    }
+
+
+    /* aside end */
+
+    /* footer start */
+    footer {
+        width: 100%;
+    }
+
+    .ig{
+        width: 20px;
+    }
+
+    .p-foot {
+        font-size: x-small;
+    }
+}
